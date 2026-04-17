@@ -114,6 +114,86 @@ We don’t just plan events—we create experiences that reflect who you are. Ev
   </div>
 </section>
 
+{/* ORGANIC MAGIC SECTION */}
+<section className="relative min-h-screen w-full flex items-center justify-center py-40 px-6 md:px-0 overflow-hidden">
+  
+  {/* 1. Outer Background (The Pexels Floral Image) */}
+  <div 
+    className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat scale-105"
+    style={{ 
+      backgroundImage: `url('https://images.pexels.com/photos/33485962/pexels-photo-33485962.jpeg?auto=compress&cs=tinysrgb&w=1920')`,
+    }}
+  />
+  {/* Subtle, cool-toned overlay to add natural contrast */}
+  <div className="absolute inset-0 z-10 bg-slate-900/40 backdrop-blur-[1px]" />
+
+  {/* 2. Main Container - Reduced Rounded Corners & Advanced Shadow */}
+  <div 
+    className="relative z-20 w-full md:w-[70%] lg:w-[65%] rounded-3xl overflow-hidden shadow-[0_20px_80px_rgba(0,0,0,0.3)]"
+  >
+    {/* Inner background image and overlay */}
+    <div 
+      className="absolute inset-0 z-0 bg-cover bg-center"
+      style={{ backgroundImage: `url('https://images.pexels.com/photos/758744/pexels-photo-758744.jpeg?auto=compress&cs=tinysrgb&w=1260')` }}
+    />
+    <div className="absolute inset-0 z-10 bg-white/95 backdrop-blur-[3px]" />
+
+    {/* Content Wrapper */}
+    <div className="relative z-20 p-8 md:p-16 flex flex-col items-center">
+      
+      {/* Heading - Zasia Font */}
+      <h2 className="text-blush text-6xl md:text-[8rem] font-zaslia leading-none mb-10 text-center drop-shadow-sm">
+        Our Magic
+      </h2>
+
+      {/* Text Block - Raleway & Zaslia */}
+      <div className="max-w-xl text-center mb-20 space-y-5">
+        <h4 className="font-zaslia  text-2xl md:text-3xl text-[#3d3431] drop-shadow-sm">
+          Explore our World
+        </h4>
+        <p className="font-raleway text-sm md:text-base leading-relaxed text-[#2D2926] font-light opacity-100 px-3">
+          We feel so lucky to constantly work with such wonderful and lovely couples—
+          Here is a selection of some of our favourite moments.
+        </p>
+      </div>
+
+      {/* 3. Broken Grid - Varying Widths and Vertical Offsets */}
+      <div className="grid grid-cols-1 md:grid-cols-6 gap-8 md:gap-4 w-full items-start">
+        
+        {/* Photo 1 (Spans 2 columns) */}
+        <div className="md:col-span-2 overflow-hidden rounded-2xl shadow-[10px_10px_30px_rgba(0,0,0,0.15)] transform md:-rotate-1 aspect-[3/4]">
+          <img 
+            src="https://images.pexels.com/photos/30521152/pexels-photo-30521152.jpeg?auto=compress&cs=tinysrgb&w=800" 
+            alt="Organic Moment 1" 
+            className="w-full h-full object-cover scale-105"
+          />
+        </div>
+        
+        {/* Photo 2 (Spans 2 columns, centered vertically) */}
+        <div className="md:col-span-2 overflow-hidden rounded-2xl shadow-[15px_15px_40px_rgba(0,0,0,0.2)] transform md:translate-y-12 aspect-[3/4]">
+          <img 
+            src="https://images.pexels.com/photos/9778787/pexels-photo-9778787.jpeg?auto=compress&cs=tinysrgb&w=800" 
+            alt="Organic Moment 2" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        
+        {/* Photo 3 (Spans 2 columns, higher up) */}
+        <div className="md:col-span-2 overflow-hidden rounded-2xl shadow-[20px_20px_50px_rgba(0,0,0,0.25)] transform md:rotate-2 md:-translate-y-8 aspect-[3/4]">
+          <img 
+            src="https://images.pexels.com/photos/25677252/pexels-photo-25677252.jpeg?auto=compress&cs=tinysrgb&w=800" 
+            alt="Organic Moment 3" 
+            className="w-full h-full object-cover scale-110"
+          />
+        </div>
+      </div>
+      
+      {/* Decorative Signature Spacer */}
+      <div className="mt-20 w-16 h-[1px] bg-blush opacity-50 self-center" />
+    </div>
+  </div>
+</section>
+
     
     </main>
   );

@@ -1,22 +1,27 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Montserrat } from "next/font/google";
+import { Playfair_Display, Montserrat, Pinyon_Script } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/Navbar";
 
-// Elegant Serif for Headings
+
 const playfair = Playfair_Display({ 
   subsets: ["latin"],
   variable: "--font-playfair",
 });
 
-// Clean Sans-Serif for Body Text
 const montserrat = Montserrat({ 
   subsets: ["latin"],
   variable: "--font-montserrat",
 });
 
+// Upgraded, premium script font
+const pinyon = Pinyon_Script({ 
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-script",
+});
+
 export const metadata: Metadata = {
-  title: "Luxury Wedding Planner",
+  title: "The Blush Bureau | Luxury Weddings",
   description: "Bespoke wedding planning and event design.",
 };
 
@@ -26,9 +31,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${montserrat.className} ${playfair.variable} bg-[#FAFAFA] text-zinc-900 antialiased`}>
-        <Navbar />
+    <html lang="en" className="scroll-smooth">
+      <body className={`${montserrat.className} ${playfair.variable} ${pinyon.variable} bg-white text-zinc-600 antialiased`}>
+        
         <main>{children}</main>
       </body>
     </html>

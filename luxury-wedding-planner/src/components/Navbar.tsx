@@ -1,65 +1,70 @@
 "use client";
+import React, { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react'; // Install lucide-react if you haven't
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { Menu } from "lucide-react";
-
-export default function Navbar() {
+const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navLinks = ['Portfolio', 'Services', 'Contact'];
+
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className={`fixed w-full z-50 transition-all duration-500 ${
-        isScrolled 
-          ? "bg-white/95 backdrop-blur-md shadow-sm py-4 text-zinc-900" 
-          : "bg-transparent py-6 text-white"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        
-        {/* Logo Area */}
-        <Link href="/" className="text-xl md:text-2xl font-serif tracking-widest uppercase">
-          The Blush Bureau
-        </Link>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 px-6 md:px-12 py-4 ${
+      isScrolled || mobileMenuOpen ? 'bg-[#FAF9F6]/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
+    }`}>
+      <div className="max-w-7xl mx-auto flex justify-between items-center">
+        {/* Brand Logo */}
+        <div className="flex items-center gap-3">
+          <div className="w-6 h-6 md:w-8 md:h-8 bg-[#E6C7C2] rounded-full shrink-0" />
+          <span className={`text-sm md:text-xl font-serif tracking-[0.3em] transition-colors ${
+            isScrolled || mobileMenuOpen ? 'text-[#2D2926]' : 'text-white'
+          }`}>
+            THE BLUSH BUREAU
+          </span>
+        </div>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex space-x-10 text-xs uppercase tracking-[0.2em]">
-          <Link href="/about" className="hover:opacity-60 transition duration-300">About</Link>
-          <Link href="/portfolio" className="hover:opacity-60 transition duration-300">Portfolio</Link>
-          <Link href="/services" className="hover:opacity-60 transition duration-300">Services</Link>
-          <Link href="/journal" className="hover:opacity-60 transition duration-300">Journal</Link>
+        <div className="hidden md:flex gap-10">
+          {navLinks.map((item) => (
+            <button key={item} className={`text-xs uppercase tracking-[0.2em] transition-colors ${
+              isScrolled ? 'text-[#2D2926] hover:text-[#E6C7C2]' : 'text-white hover:text-[#E6C7C2]'
+            }`}>
+              {item}
+            </button>
+          ))}
         </div>
 
-        {/* Contact Button / Mobile Menu Icon */}
-        <div className="flex items-center gap-6">
-          <Link 
-            href="/contact" 
-            className={`hidden md:block border px-6 py-2 text-xs uppercase tracking-widest transition duration-300 ${
-              isScrolled 
-                ? "border-zinc-900 hover:bg-zinc-900 hover:text-white" 
-                : "border-white hover:bg-white hover:text-zinc-900"
-            }`}
-          >
-            Inquire
-          </Link>
-          <button className="md:hidden">
-            <Menu className="w-6 h-6" />
-          </button>
-        </div>
-
+        {/* Mobile Toggle */}
+        <button 
+          className="md:hidden p-2" 
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          {mobileMenuOpen ? (
+            <X className="text-[#2D2926]" />
+          ) : (
+            <Menu className={isScrolled ? 'text-[#2D2926]' : 'text-white'} />
+          )}
+        </button>
       </div>
-    </motion.nav>
+
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 w-full bg-[#FAF9F6] border-t border-gray-100 flex flex-col p-8 gap-6 animate-in fade-in slide-in-from-top-4">
+          {navLinks.map((item) => (
+            <button key={item} className="text-[#2D2926] text-left text-sm uppercase tracking-widest font-light">
+              {item}
+            </button>
+          ))}
+        </div>
+      )}
+    </nav>
   );
-}
+};
+
+export default Navbar;

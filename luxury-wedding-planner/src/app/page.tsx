@@ -1,124 +1,137 @@
-"use client";
-
-import Hero from "../sections/Hero";
-import { motion, Variants } from "framer-motion";
-
-// Reusable animation setting for smooth scroll reveals
-// We added the ": Variants" type here to fix the TypeScript error!
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-};
+import Navbar from '@/components/Navbar';
 
 export default function Home() {
+  const heroImage = "https://images.pexels.com/photos/17000467/pexels-photo-17000467.jpeg?_gl=1*uancot*_ga*NDE4MDcyMjAzLjE3NjY4MjkyOTQ.*_ga_8JE65Q40S6*czE3NzY0MzQ5MjEkbzgkZzEkdDE3NzY0MzUxOTYkajQ4JGwwJGgw";
+
   return (
-    <div className="min-h-screen bg-[#FAFAFA] text-zinc-800">
-      <Hero />
+    <main className="relative min-h-screen bg-[#FAF9F6]">
+      <Navbar />
       
-      {/* HELLO SECTION */}
-      <section id="hello" className="py-24 md:py-32 px-6">
-        <motion.div 
-          initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp}
-          className="max-w-3xl mx-auto text-center"
-        >
-          <h2 className="font-serif text-3xl md:text-5xl mb-8 text-zinc-900">Hello</h2>
-          <div className="space-y-6 text-sm md:text-base leading-relaxed text-zinc-600">
-            <p>Welcome to our world of timeless celebrations and unforgettable love stories. Based in Delhi NCR, we are luxury wedding planners and designers, curating bespoke weddings across India and beautiful destinations worldwide.</p>
-            <p>We don’t just plan events—we create experiences that reflect who you are. Every detail, from décor to hospitality, is designed with care so your wedding feels personal, graceful, and truly memorable.</p>
-            <p className="font-medium text-zinc-800">We are in the business of dreams, and it is our passion to bring your wedding dream alive with elegance and heart.</p>
+      <section className="relative h-screen w-full flex items-center overflow-hidden">
+        {/* Hero Image with a slightly softer overlay for that "Luxury" feel */}
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 scale-105"
+          style={{ 
+            backgroundImage: `url('${heroImage}')`,
+          }}
+        />
+        {/* Subtle gradient overlay: darker on the left to make the white text pop */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/50 via-black/20 to-transparent" />
+
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-8 md:px-16">
+          <div className="flex flex-col items-start font-serif text-white">
+            
+            {/* "the" - Positioned slightly above the first 'B' */}
+            <span className="text-xl md:text-3xl italic mb-[-10px] md:mb-[-20px] ml-1 opacity-90 drop-shadow-md">
+              the
+            </span>
+            
+            {/* The "B"s are now perfectly stacked using items-start */}
+            <div className="flex flex-col leading-[0.8] tracking-tighter drop-shadow-2xl">
+              <h1 style={{ fontSize: 'clamp(5rem, 18vw, 14rem)' }}>
+                Blush
+              </h1>
+              <h1 style={{ fontSize: 'clamp(5rem, 18vw, 14rem)' }}>
+                Bureau
+              </h1>
+            </div>
+
+            {/* Subtext / Tagline */}
+            <div className="mt-10 md:mt-14 max-w-sm border-l-2 border-[#E6C7C2] pl-6 py-1">
+              <p className="text-[10px] md:text-xs uppercase tracking-[0.6em] font-light leading-relaxed opacity-90">
+                Crafting <span className="italic">extraordinary</span> <br /> 
+                moments for the modern romantic.
+              </p>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
-      {/* OUR MAGIC SECTION */}
-      <section className="py-24 bg-white px-6">
-        <motion.div 
-          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-          className="max-w-7xl mx-auto text-center"
-        >
-          <p className="text-xs uppercase tracking-[0.2em] mb-4 text-zinc-400">Our Magic</p>
-          <h2 className="font-serif text-3xl md:text-5xl mb-6 text-zinc-900">Explore our World!</h2>
-          <p className="max-w-2xl mx-auto text-zinc-600 mb-16">We feel so lucky to constantly work with such wonderful and lovely couples - Here is a selection of some of our favourite moments.</p>
-          
-          {/* Stunning Image Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-[600px]">
-            <div 
-              className="w-full h-full object-cover rounded-sm bg-cover bg-center"
-              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop')" }}
-            ></div>
-            <div 
-              className="w-full h-full object-cover rounded-sm bg-cover bg-center"
-              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2070&auto=format&fit=crop')" }}
-            ></div>
-            <div 
-              className="w-full h-full object-cover rounded-sm bg-cover bg-center"
-              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop')" }}
-            ></div>
+{/* About Section */}
+<section className="relative min-h-screen bg-[#F5E6E0] py-24 px-6 md:px-16 flex items-center overflow-hidden">
+  <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    
+    {/* Left Side: Static Polaroids (Large & Separated) */}
+    <div className="relative h-[500px] md:h-[750px] flex items-center justify-center order-2 lg:order-1">
+      
+      {/* Back Polaroid */}
+      <div className="absolute transform -rotate-12 -translate-x-20 md:-translate-x-32 -translate-y-12 z-10">
+        <div className="bg-white p-5 pb-20 shadow-[15px_15px_40px_rgba(0,0,0,0.12)]">
+          <div className="w-[300px] h-[360px] md:w-[420px] md:h-[500px] overflow-hidden">
+            <img 
+              src="https://images.pexels.com/photos/35872894/pexels-photo-35872894.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              alt="Wedding Detail" 
+              className="w-full h-full object-cover"
+            />
           </div>
-        </motion.div>
-      </section>
+        </div>
+      </div>
 
-      {/* WORDS OF LOVE SECTION */}
-      <section className="py-32 px-6 bg-[#F4F3F0]">
-        <motion.div 
-          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-          className="max-w-4xl mx-auto text-center"
-        >
-          <p className="text-xs uppercase tracking-[0.2em] mb-10 text-zinc-400">Words Of Love</p>
-          <h3 className="font-serif text-2xl md:text-4xl leading-snug text-zinc-800 italic">
-            “Your wedding is as precious to us as it is to you — we go above and beyond to make every moment breathtaking.”
-          </h3>
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-             <div className="bg-white p-8 shadow-sm">
-                <p className="text-sm text-zinc-600 italic">"The Blush Bureau didn't just plan our wedding; they orchestrated a masterpiece. Every detail was flawless."</p>
-                <p className="text-xs uppercase tracking-widest mt-6 text-zinc-400">— A & R</p>
-             </div>
-             <div className="bg-white p-8 shadow-sm">
-                <p className="text-sm text-zinc-600 italic">"They took all our stress away. We actually got to enjoy our own wedding knowing they had everything handled."</p>
-                <p className="text-xs uppercase tracking-widest mt-6 text-zinc-400">— S & V</p>
-             </div>
+      {/* Front Polaroid (Lower and Right for visibility) */}
+      <div className="absolute transform rotate-6 translate-x-20 md:translate-x-32 translate-y-24 md:translate-y-40 z-20">
+        <div className="bg-white p-5 pb-20 shadow-[0_40px_80px_rgba(0,0,0,0.15)]">
+          <div className="w-[300px] h-[360px] md:w-[420px] md:h-[500px] overflow-hidden">
+            <img 
+              src="https://images.pexels.com/photos/12200848/pexels-photo-12200848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              alt="Luxury Reception" 
+              className="w-full h-full object-cover"
+            />
           </div>
-        </motion.div>
-      </section>
-
-      {/* TELL US YOUR STORY SECTION */}
-      <section className="py-24 md:py-32 px-6">
-        <motion.div 
-          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-          className="max-w-3xl mx-auto text-center"
-        >
-          <h2 className="font-serif text-3xl md:text-5xl mb-10 text-zinc-900">Tell Us Your Story</h2>
-          <div className="space-y-6 text-sm md:text-base leading-relaxed text-zinc-600 mb-12">
-            <p>Every couple has a story — the little moments, the big dreams, and the vision of how you imagine the most important day of your life. Tell us yours… in your own words, your own way.</p>
-            <p>Once you share your vision, consider the rest handled. From the tiniest details to the grandest experiences, we quietly take over all the stress, all the coordination, and all the madness that weddings usually bring.</p>
-            <p>You get to enjoy the journey… the excitement, the emotions, the celebrations — while we work behind the scenes to make everything look effortless and beautifully put together.</p>
-            <p className="font-medium text-zinc-800 pt-4">If you’re ready to begin this stress-free, luxury wedding experience…</p>
-          </div>
-          
-          <a href="/contact" className="inline-block bg-zinc-900 text-white px-10 py-4 text-xs uppercase tracking-[0.2em] hover:bg-zinc-800 transition duration-300">
-            Book Your Consultation
-          </a>
-        </motion.div>
-      </section>
-
-      {/* FOOTER & FOLLOW OUR JOURNEY */}
-      <footer className="bg-zinc-900 text-white text-center py-20 px-6">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-          <p className="text-xs uppercase tracking-[0.2em] mb-8 text-zinc-400">Follow Our Journey</p>
-          
-          {/* Social Image Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 max-w-5xl mx-auto mb-16">
-            <div className="h-48 w-full bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=2070&auto=format&fit=crop')" }}></div>
-            <div className="h-48 w-full bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=2070&auto=format&fit=crop')" }}></div>
-            <div className="h-48 w-full bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2070&auto=format&fit=crop')" }}></div>
-            <div className="h-48 w-full bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop')" }}></div>
-          </div>
-
-          <h3 className="font-serif text-2xl md:text-4xl italic text-zinc-300">
-            At The Blush Bureau, love inspires everything we do.
-          </h3>
-        </motion.div>
-      </footer>
+        </div>
+      </div>
     </div>
+
+    {/* Right Side: Centered Content Block on the Right Side */}
+    <div className="flex flex-col items-center text-center order-1 lg:order-2">
+      
+      {/* "Hello!!!" - Darker & Cursive */}
+      <h2 
+        className="text-[#3d3431] leading-none mb-10 tracking-tight"
+        style={{ 
+          fontSize: 'clamp(5rem, 12vw, 9rem)', 
+          fontFamily: '"Amsterdam Handwriting", cursive' 
+        }}
+      >
+        Hello!!!
+      </h2>
+      
+      <div className="max-w-lg space-y-10">
+        <h3 
+          className="text-[#2D2926] text-2xl md:text-3xl leading-snug italic"
+          style={{ fontFamily: '"Zaslia", serif' }}
+        >
+          Welcome to our world of timeless celebrations and unforgettable love stories. 
+        </h3>
+        
+        <div className="space-y-8 text-[#2D2926]">
+          <p 
+            className="text-base md:text-lg leading-relaxed tracking-wide font-light opacity-100"
+            style={{ fontFamily: '"Preistacy", serif' }}
+          >
+            Based in Delhi NCR, we are luxury wedding planners and designers, curating bespoke weddings across India and beautiful destinations worldwide.
+          </p>
+
+          <p 
+            className="text-base md:text-lg leading-relaxed tracking-wide font-light opacity-100"
+            style={{ fontFamily: '"Preistacy", serif' }}
+          >
+            We don’t just plan events—we create experiences that reflect who you are. Every detail, from décor to hospitality, is designed with care so your wedding feels personal, graceful, and truly memorable.
+          </p>
+
+          <p 
+            className="text-lg md:text-xl font-medium tracking-[0.05em] text-[#3d3431] leading-relaxed opacity-100"
+            style={{ fontFamily: '"Zaslia", serif' }}
+          >
+            We are in the business of dreams, and it is our passion to bring your wedding dream alive with elegance and heart.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    
+    </main>
   );
 }

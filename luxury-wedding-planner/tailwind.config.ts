@@ -6,9 +6,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        blush: '#C59B99', // The signature luxury pink
+      },
       fontFamily: {
         serif: ['var(--font-playfair)'], 
         sans: ['var(--font-montserrat)'], 
+        script: ['var(--font-script)'], 
       },
     },
   },

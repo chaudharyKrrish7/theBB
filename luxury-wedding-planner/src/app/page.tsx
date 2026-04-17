@@ -194,6 +194,92 @@ We don’t just plan events—we create experiences that reflect who you are. Ev
   </div>
 </section>
 
+{/* TESTIMONIALS SECTION - REVERTED TO V1 */}
+<section className="relative min-h-screen bg-[#F5E6E0] py-32 px-6 md:px-16 flex flex-col items-center overflow-hidden">
+  
+  {/* 1. Header & Quote Block */}
+  <div className="max-w-4xl w-full text-center mb-24">
+    <h2 className="text-blush text-6xl md:text-[8rem] font-amsterdam leading-none mb-10 drop-shadow-sm font-zaslia ">
+      Words of love
+    </h2>
+    
+    <div className="relative">
+      <span className="text-blush/30 text-8xl font-serif absolute -top-10 left-0 md:left-10 opacity-100">“</span>
+      <p className="font-raleway italic text-2xl md:text-4xl text-[#3d3431] leading-relaxed px-8">
+        Your wedding is as precious to us as it is to you .  We go above and beyond to make every moment breathtaking.
+      </p>
+      <span className="text-blush/30 text-8xl font-serif absolute -bottom-20 right-0 md:right-10 opacity-100">”</span>
+    </div>
+  </div>
+
+  {/* 2. Reviews & Branded Image Grid */}
+  <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+    
+    {/* Left Side: Startup Branded Image (Spans 5 columns) */}
+    <div className="lg:col-span-5 relative group">
+      <div className="absolute -inset-4 border border-blush/20 rounded-2xl transform translate-x-2 translate-y-2 z-0"></div>
+      <div className="relative z-10 overflow-hidden rounded-2xl shadow-2xl aspect-[4/5]">
+        <img 
+          src="https://images.pexels.com/photos/33636577/pexels-photo-33636577.jpeg?_gl=1*ytcwa*_ga*NDE4MDcyMjAzLjE3NjY4MjkyOTQ.*_ga_8JE65Q40S6*czE3NzY0NDk5MTQkbzEwJGcxJHQxNzc2NDUwNDQwJGo1OSRsMCRoMA.." 
+          alt="The Blush Bureau Team" 
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+        <p className="absolute bottom-6 left-6 text-white font-amsterdam text-3xl">The Bureau Spirit</p>
+      </div>
+    </div>
+
+    {/* Right Side: Reviews Column (Spans 7 columns) */}
+    <div className="lg:col-span-7 space-y-12 py-6">
+      
+      {/* Review 1 */}
+      <div className="border-b border-blush/20 pb-10">
+        <div className="flex gap-1 mb-4">
+          {[...Array(5)].map((_, i) => (
+            <span key={i} className="text-blush text-sm">★</span>
+          ))}
+        </div>
+        <p className="font-raleway text-lg text-[#2D2926] leading-relaxed italic mb-4">
+          "They didn't just plan a wedding; they curated an experience. Every detail was more beautiful than we could have ever imagined. Truly the best luxury planners in Delhi."
+        </p>
+        <p className="font-zaslia text-sm uppercase tracking-widest text-[#3d3431]">— Ananya & Rohan</p>
+      </div>
+
+      {/* Review 2 */}
+      <div className="border-b border-blush/20 pb-10">
+        <div className="flex gap-1 mb-4">
+          {[...Array(5)].map((_, i) => (
+            <span key={i} className="text-blush text-sm">★</span>
+          ))}
+        </div>
+        <p className="font-raleway text-lg text-[#2D2926] leading-relaxed italic mb-4">
+          "The Blush Bureau team is incredible. Their calm energy and flawless execution allowed us to actually enjoy our day while they handled the 'magic' behind the scenes."
+        </p>
+        <p className="font-zaslia text-sm uppercase tracking-widest text-[#3d3431]">— Meher & Kabir</p>
+      </div>
+
+      {/* Review 3 */}
+      <div className="pb-10">
+        <div className="flex gap-1 mb-4">
+          {[...Array(5)].map((_, i) => (
+            <span key={i} className="text-blush text-sm">★</span>
+          ))}
+        </div>
+        <p className="font-raleway text-lg text-[#2D2926] leading-relaxed italic mb-4">
+          "Elegant, heart-centered, and breathtakingly creative. If you want a wedding that feels like a dream, this is the team you need."
+        </p>
+        <p className="font-zaslia text-sm uppercase tracking-widest text-[#3d3431]">— Sarah & James</p>
+      </div>
+
+    </div>
+  </div>
+
+  {/* Floating Decorative Element */}
+  <div className="mt-20 flex flex-col items-center">
+    <div className="w-[1px] h-20 bg-gradient-to-b from-blush to-transparent"></div>
+  </div>
+</section>
+
     
     </main>
   );

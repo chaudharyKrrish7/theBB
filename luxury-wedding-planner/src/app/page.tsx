@@ -22,23 +22,23 @@ export default function Home() {
           <div className="flex flex-col items-start font-serif text-white">
             
             {/* "the" - Positioned slightly above the first 'B' */}
-            <span className="text-xl md:text-3xl italic mb-[-10px] md:mb-[-20px] ml-1 opacity-90 drop-shadow-md">
+            <span className="text-xl md:text-3xl italic mb-[-10px] md:mb-[1px] ml-1 opacity-90 drop-shadow-md font-zaslia">
               the
             </span>
             
             {/* The "B"s are now perfectly stacked using items-start */}
-            <div className="flex flex-col leading-[0.8] tracking-tighter drop-shadow-2xl">
-              <h1 style={{ fontSize: 'clamp(5rem, 18vw, 14rem)' }}>
+            <div className="flex flex-col leading-[0.8] tracking-tighter drop-shadow-2xl ">
+              <h1 style={{ fontSize: 'clamp(5rem, 18vw, 14rem)', fontFamily: 'var(--font-zaslia)' }}>
                 Blush
               </h1>
-              <h1 style={{ fontSize: 'clamp(5rem, 18vw, 14rem)' }}>
+              <h1 style={{ fontSize: 'clamp(5rem, 18vw, 14rem)', fontFamily: 'var(--font-zaslia)' }}>
                 Bureau
               </h1>
             </div>
 
             {/* Subtext / Tagline */}
             <div className="mt-10 md:mt-14 max-w-sm border-l-2 border-[#E6C7C2] pl-6 py-1">
-              <p className="text-[10px] md:text-xs uppercase tracking-[0.6em] font-light leading-relaxed opacity-90">
+              <p className="text-[10px] md:text-xs uppercase tracking-[0.6em] font-light leading-relaxed opacity-90 drop-shadow-md font-raleway">
                 Crafting <span className="italic">extraordinary</span> <br /> 
                 moments for the modern romantic.
               </p>
@@ -80,53 +80,36 @@ export default function Home() {
         </div>
       </div>
     </div>
+{/* Right Side: Centered Content Block */}
+<div className="flex flex-col items-center text-center order-1 lg:order-2">
+  <br></br>
+  <br></br>
+  <br></br>
+  <h2 className="text-[#df81a8] text-7xl md:text-[9rem] leading-none mb-10 font-amsterdam italic drop-shadow-2xl">
+    Hello!
+  </h2>
+  <br></br>
+  <br></br>
+  <br></br>
+  <div className="max-w-lg space-y-10">
+    <h3 className="text-[#2D2926] text-2xl md:text-3xl font-raleway italic">
+      Welcome to our world of timeless celebrations and unforgettable love stories.
 
-    {/* Right Side: Centered Content Block on the Right Side */}
-    <div className="flex flex-col items-center text-center order-1 lg:order-2">
-      
-      {/* "Hello!!!" - Darker & Cursive */}
-      <h2 
-        className="text-[#3d3431] leading-none mb-10 tracking-tight"
-        style={{ 
-          fontSize: 'clamp(5rem, 12vw, 9rem)', 
-          fontFamily: '"Amsterdam Handwriting", cursive' 
-        }}
-      >
-        Hello!!!
-      </h2>
-      
-      <div className="max-w-lg space-y-10">
-        <h3 
-          className="text-[#2D2926] text-2xl md:text-3xl leading-snug italic"
-          style={{ fontFamily: '"Zaslia", serif' }}
-        >
-          Welcome to our world of timeless celebrations and unforgettable love stories. 
-        </h3>
-        
-        <div className="space-y-8 text-[#2D2926]">
-          <p 
-            className="text-base md:text-lg leading-relaxed tracking-wide font-light opacity-100"
-            style={{ fontFamily: '"Preistacy", serif' }}
-          >
-            Based in Delhi NCR, we are luxury wedding planners and designers, curating bespoke weddings across India and beautiful destinations worldwide.
-          </p>
+    </h3>
+    
+    <div className="space-y-8 text-[#2D2926] ">
+      <p className="text-base md:text-lg leading-relaxed font-raleway">
+        Based in Delhi NCR, we are luxury wedding planners and designers, curating bespoke weddings across India and beautiful destinations worldwide.
+We don’t just plan events—we create experiences that reflect who you are. Every detail, from décor to hospitality, is designed with care so your wedding feels personal, graceful, and truly memorable.
 
-          <p 
-            className="text-base md:text-lg leading-relaxed tracking-wide font-light opacity-100"
-            style={{ fontFamily: '"Preistacy", serif' }}
-          >
-            We don’t just plan events—we create experiences that reflect who you are. Every detail, from décor to hospitality, is designed with care so your wedding feels personal, graceful, and truly memorable.
-          </p>
+      </p>
 
-          <p 
-            className="text-lg md:text-xl font-medium tracking-[0.05em] text-[#3d3431] leading-relaxed opacity-100"
-            style={{ fontFamily: '"Zaslia", serif' }}
-          >
-            We are in the business of dreams, and it is our passion to bring your wedding dream alive with elegance and heart.
-          </p>
-        </div>
-      </div>
+      <h3 className="text-lg md:text-xl text-[#3d3431] font-raleway">
+        We are in the business of dreams, and it is our passion to bring your wedding dream alive with elegance and heart.
+      </h3>
     </div>
+  </div>
+</div>
 
   </div>
 </section>

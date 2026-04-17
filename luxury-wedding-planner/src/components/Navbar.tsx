@@ -16,14 +16,14 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-500 px-6 md:px-12 py-4 ${
-      isScrolled || mobileMenuOpen ? 'bg-[#FAF9F6]/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
+      isScrolled || mobileMenuOpen ? 'bg-[#FAF9F6]/95 backdrop-blur-md shadow-sm' : 'bg-transparent' 
     }`}>
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+      <div className="max-w-7xl mx-auto flex justify-between items-center ">
         {/* Brand Logo */}
         <div className="flex items-center gap-3">
-          <div className="w-6 h-6 md:w-8 md:h-8 bg-[#E6C7C2] rounded-full shrink-0" />
-          <span className={`text-sm md:text-xl font-serif tracking-[0.3em] transition-colors ${
-            isScrolled || mobileMenuOpen ? 'text-[#2D2926]' : 'text-white'
+          <div className="w-6 h-6 md:w-8 md:h-8 bg-[#E6C7C2] rounded-full  shrink-0" />
+          <span className={`text-sm md:text-xl font-serif tracking-[0.3em] transition-colors  ${
+            isScrolled || mobileMenuOpen ? 'text-[#2D2926]' : 'text-white '
           }`}>
             THE BLUSH BUREAU
           </span>

@@ -1,23 +1,40 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Montserrat, Pinyon_Script } from "next/font/google";
+import { Montserrat } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-
-const playfair = Playfair_Display({ 
-  subsets: ["latin"],
-  variable: "--font-playfair",
-});
-
+// Base font for body/readability
 const montserrat = Montserrat({ 
   subsets: ["latin"],
   variable: "--font-montserrat",
 });
 
-// Upgraded, premium script font
-const pinyon = Pinyon_Script({ 
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-script",
+
+
+// Custom Brand Fonts
+const alexBrush = localFont({
+  src: "./fonts/AlexBrush.ttf", // Ensure this path matches your file name/extension
+  variable: "--font-alexbrush",
+});
+
+const raleway = localFont({
+  src: "./fonts/Raleway.ttf", // Ensure this path matches your file name/extension
+  variable: "--font-raleway",
+});
+
+const amsterdam = localFont({
+  src: "./fonts/Amsterdam.ttf", // Ensure this path matches your file name/extension
+  variable: "--font-amsterdam",
+});
+
+const preistacy = localFont({
+  src: "./fonts/Preistacy.otf",
+  variable: "--font-preistacy",
+});
+
+const zaslia = localFont({
+  src: "./fonts/Zaslia.otf",
+  variable: "--font-zaslia",
 });
 
 export const metadata: Metadata = {
@@ -32,8 +49,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${montserrat.className} ${playfair.variable} ${pinyon.variable} bg-white text-zinc-600 antialiased`}>
-        
+      <body className={`
+        ${montserrat.variable} 
+        ${amsterdam.variable} 
+        ${preistacy.variable} 
+        ${zaslia.variable} 
+        ${alexBrush.variable}
+        ${raleway.variable}
+        bg-[#FAF9F6] text-zinc-800 antialiased
+      `}>
         <main>{children}</main>
       </body>
     </html>

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react'; // Install lucide-react if you haven't
+import Link from 'next/link';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,54 +13,72 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = ['Portfolio', 'Services', 'Contact'];
+  const navLinks = [
+    { name: 'About', path: '/about' },
+    { name: 'Services', path: '/services' },
+    { name: 'Contact', path: '/contact' },
+  ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 px-6 md:px-12 py-4 ${
+    <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 px-6 md:px-12 py-4 ${
       isScrolled || mobileMenuOpen ? 'bg-[#FAF9F6]/95 backdrop-blur-md shadow-sm' : 'bg-transparent' 
     }`}>
-      <div className="max-w-7xl mx-auto flex justify-between items-center ">
-        {/* Brand Logo */}
-        <div className="flex items-center gap-3">
-          <div className="w-6 h-6 md:w-8 md:h-8 bg-[#E6C7C2] rounded-full  shrink-0" />
-          <span className={`text-sm md:text-xl font-serif tracking-[0.3em] transition-colors  ${
-            isScrolled || mobileMenuOpen ? 'text-[#2D2926]' : 'text-white '
+      <div className="max-w-7xl mx-auto flex justify-between items-center">
+        
+        {/* Brand Logo - Amsterdam + Zaslia Combo */}
+        <Link href="/" className="flex flex-col group">
+          <span className={`font-amsterdam text-xl transition-colors duration-500 mb-[-8px] ${
+            isScrolled || mobileMenuOpen ? 'text-[#df81a8]' : 'text-[#df81a8]'
           }`}>
-            THE BLUSH BUREAU
+            the
           </span>
-        </div>
+          <span className={`font-zaslia text-2xl tracking-tighter transition-colors duration-500 ${
+            isScrolled || mobileMenuOpen ? 'text-[#2D2926]' : 'text-white'
+          }`}>
+            Blush Bureau
+          </span>
+        </Link>
 
         {/* Desktop Links */}
         <div className="hidden md:flex gap-10">
-          {navLinks.map((item) => (
-            <button key={item} className={`text-xs uppercase tracking-[0.2em] transition-colors ${
-              isScrolled ? 'text-[#2D2926] hover:text-[#E6C7C2]' : 'text-white hover:text-[#E6C7C2]'
-            }`}>
-              {item}
-            </button>
+          {navLinks.map((link) => (
+            <Link 
+              key={link.name} 
+              href={link.path}
+              className={`text-[10px] uppercase tracking-[0.3em] font-medium transition-all duration-300 hover:text-[#df81a8] ${
+                isScrolled ? 'text-[#2D2926]' : 'text-white'
+              }`}
+            >
+              {link.name}
+            </Link>
           ))}
         </div>
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden p-2" 
+          className="md:hidden p-2 transition-transform active:scale-90" 
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? (
-            <X className="text-[#2D2926]" />
+            <X className="text-[#2D2926]" size={24} />
           ) : (
-            <Menu className={isScrolled ? 'text-[#2D2926]' : 'text-white'} />
+            <Menu className={isScrolled ? 'text-[#2D2926]' : 'text-white'} size={24} />
           )}
         </button>
       </div>
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-[#FAF9F6] border-t border-gray-100 flex flex-col p-8 gap-6 animate-in fade-in slide-in-from-top-4">
-          {navLinks.map((item) => (
-            <button key={item} className="text-[#2D2926] text-left text-sm uppercase tracking-widest font-light">
-              {item}
-            </button>
+        <div className="md:hidden absolute top-full left-0 w-full bg-[#FAF9F6] border-t border-[#df81a8]/10 flex flex-col p-8 gap-8 animate-in fade-in slide-in-from-top-4 shadow-xl">
+          {navLinks.map((link) => (
+            <Link 
+              key={link.name} 
+              href={link.path}
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-[#2D2926] text-left text-sm uppercase tracking-[0.4em] font-light hover:text-[#df81a8] transition-colors"
+            >
+              {link.name}
+            </Link>
           ))}
         </div>
       )}

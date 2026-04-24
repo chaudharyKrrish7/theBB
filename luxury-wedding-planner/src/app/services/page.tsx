@@ -32,7 +32,7 @@ export default function Services() {
           <h1 className="text-[#ffffff] text-7xl md:text-[9rem] font-zaslia mb-6 drop-shadow-2xl">
           Our Services
           </h1>
-          <p className="font-zaslia italic text-2xl md:text-4xl text-white max-w-4xl mx-auto leading-relaxed drop-shadow-md">
+          <p className="font-raleway italic text-2xl md:text-4xl text-white max-w-4xl mx-auto leading-relaxed drop-shadow-md">
             “A wedding is a feeling… <br className="hidden md:block" /> 
             and we’re here to bring that feeling to life.”
           </p>
@@ -51,17 +51,17 @@ export default function Services() {
         </div>
 
         <div className="space-y-8">
-          <h2 className="font-amsterdam text-[#df81a8] text-5xl md:text-6xl">Imagine this…</h2>
+          <h2 className="font-zaslia text-[#df81a8] text-5xl md:text-6xl">Imagine this…</h2>
           <div className="space-y-6 font-raleway text-lg md:text-xl leading-relaxed font-light">
             <p>You wake up on your wedding day, not with stress — but with a quiet sense of excitement.</p>
-            <p className="font-zaslia italic text-2xl md:text-3xl text-[#3d3431]">Everything is already taken care of.</p>
+            <p className="font-raleway italic text-2xl md:text-3xl text-[#3d3431]">Everything is already taken care of.</p>
             <p>Every detail you didn’t even think of… thoughtfully planned, beautifully executed.</p>
             <div className="space-y-2">
               <p>You’re not running around.</p>
               <p>You’re not answering calls.</p>
               <p className="text-[#df81a8] font-medium text-2xl">You’re simply… present.</p>
             </div>
-            <p className="font-zaslia uppercase tracking-[0.3em] text-xs pt-4 opacity-60 leading-loose">
+            <p className="font-raleway uppercase tracking-[0.3em] text-xs pt-4 opacity-100 leading-loose">
               Present in the moment. <br />
               Present with your people. <br />
               Present in one of the most important days of your life.
@@ -79,7 +79,7 @@ export default function Services() {
             <p>Every celebration is designed to reflect you — your story, your taste, your energy.</p>
             <div className="pt-4 space-y-2">
                 <p className="font-zaslia text-xs uppercase tracking-widest opacity-60">No templates. No repetition.</p>
-                <p className="font-amsterdam text-4xl text-[#3d3431]">Only bespoke, refined experiences.</p>
+                <p className="font-raleway text-4xl text-[#3d3431]">Only bespoke, refined experiences.</p>
             </div>
           </div>
         </div>
@@ -146,7 +146,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* FOOTER SECTION */}
+         {/* FOOTER SECTION */}
       <footer className="relative w-full bg-[#2D2926] text-[#FAF9F6] py-20 px-6 md:px-16 overflow-hidden">
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center opacity-10 grayscale"
@@ -157,13 +157,13 @@ export default function Services() {
         <div className="relative z-20 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-start">
             <div className="md:col-span-3 space-y-6">
-              <h4 className="font-zaslia text-xs uppercase tracking-[0.3em] text-[#df81a8]">Navigate</h4>
+              <h4 className="font-zaslia text-xs uppercase tracking-[0.3em] text-[#df81a8]"></h4>
               <ul className="space-y-4 font-raleway text-sm opacity-80">
-                <li className="hover:text-[#df81a8] transition-colors cursor-pointer">Home</li>
-                <li className="hover:text-[#df81a8] transition-colors cursor-pointer">Our Story</li>
-                <li className="hover:text-[#df81a8] transition-colors cursor-pointer">The Magic</li>
-                <li className="hover:text-[#df81a8] transition-colors cursor-pointer">Words of Love</li>
-                <li className="hover:text-[#df81a8] transition-colors cursor-pointer">Contact</li>
+                <li className="hover:text-[#df81a8] transition-colors cursor-pointer"></li>
+                <li className="hover:text-[#df81a8] transition-colors cursor-pointer"></li>
+                <li className="hover:text-[#df81a8] transition-colors cursor-pointer"></li>
+                <li className="hover:text-[#df81a8] transition-colors cursor-pointer"></li>
+                <li className="hover:text-[#df81a8] transition-colors cursor-pointer"></li>
               </ul>
             </div>
             <div className="md:col-span-6 flex flex-col items-center text-center space-y-8 border-y md:border-y-0 md:border-x border-[#FAF9F6]/10 py-12 md:py-0 px-4">
@@ -173,7 +173,7 @@ export default function Services() {
               </div>
               <div className="space-y-2 font-raleway text-sm opacity-90 max-w-xs">
                 <p>Based in Delhi NCR</p>
-                <p>Curating Bespoke Luxury Weddings Worldwide</p>
+                <p>+91 95998 43861</p>
               </div>
               <div className="flex gap-8 items-center pt-4">
                 <a href="#" className="hover:text-[#df81a8] transition-all transform hover:scale-110">Instagram</a>
@@ -181,12 +181,12 @@ export default function Services() {
               </div>
             </div>
             <div className="md:col-span-3 flex flex-col items-center md:items-end text-center md:text-right space-y-6">
-              <h4 className="font-zaslia text-xs uppercase tracking-[0.3em] text-[#df81a8]">Get in Touch</h4>
+              <h4 className="font-zaslia text-xs uppercase tracking-[0.3em] text-[#df81a8]"></h4>
               <div className="space-y-4 font-raleway text-sm opacity-80">
-                <p className="hover:text-[#df81a8] cursor-pointer">hello@theblushbureau.com</p>
+                <p className="hover:text-[#df81a8] cursor-pointer"></p>
                 <div className="pt-4 space-y-1">
-                  <p className="text-[#df81a8] font-zaslia italic">Hours</p>
-                  <p>Mon — Fri: 10am - 7pm</p>
+                  <p className="text-[#df81a8] font-zaslia italic"></p>
+                  <p></p>
                 </div>
               </div>
             </div>
@@ -212,6 +212,9 @@ export default function Services() {
           </div>
         </div>
       )}
+    
     </main>
+
+    
   );
 }

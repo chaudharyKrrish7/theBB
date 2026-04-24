@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image'; // Import Next.js Image component
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
@@ -25,18 +26,17 @@ const Navbar = () => {
     }`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         
-        {/* Brand Logo - Amsterdam + Zaslia Combo */}
-        <Link href="/" className="flex flex-col group">
-          <span className={`font-amsterdam text-xl transition-colors duration-500 mb-[-8px] ${
-            isScrolled || mobileMenuOpen ? 'text-[#df81a8]' : 'text-[#df81a8]'
-          }`}>
-            the
-          </span>
-          <span className={`font-zaslia text-2xl tracking-tighter transition-colors duration-500 ${
-            isScrolled || mobileMenuOpen ? 'text-[#2D2926]' : 'text-white'
-          }`}>
-            Blush Bureau
-          </span>
+        {/* Brand Logo - Swapped Text for Image */}
+        <Link href="/" className="relative h-10 w-32 md:h-12 md:w-48 transition-all duration-500">
+          <Image 
+            src="/img/logo.png" 
+            alt="The Blush Bureau" 
+            fill 
+            className={`object-contain transition-all duration-500 ${
+              isScrolled || mobileMenuOpen ? '' : 'brightness-0 invert'
+            }`}
+            priority
+          />
         </Link>
 
         {/* Desktop Links */}

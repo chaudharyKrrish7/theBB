@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import { useState } from 'react';
 export default function Home() {
@@ -150,8 +151,8 @@ We don’t just plan events—we create experiences that reflect who you are. Ev
 
       {/* Text Block - Raleway & Zaslia */}
       <div className="max-w-xl text-center mb-20 space-y-5">
-        <h4 className="font-zaslia  text-2xl md:text-3xl text-[#3d3431] drop-shadow-sm">
-          Explore our World
+        <h4 className="font-geist  text-2xl md:text-3xl text-[#3d3431] drop-shadow-sm">
+         EXPLORE OUR WORLD
         </h4>
         <p className="font-raleway text-sm md:text-base leading-relaxed text-[#2D2926] font-light opacity-100 px-3">
           We feel so lucky to constantly work with such wonderful and lovely couples—
@@ -188,7 +189,35 @@ We don’t just plan events—we create experiences that reflect who you are. Ev
             className="w-full h-full object-cover scale-110"
           />
         </div>
+
+         {/* Photo 1 (Spans 2 columns) */}
+        <div className="md:col-span-2 overflow-hidden rounded-2xl shadow-[10px_10px_30px_rgba(0,0,0,0.15)] transform md:-rotate-1 aspect-[3/4]">
+          <img 
+            src="https://images.pexels.com/photos/36943221/pexels-photo-36943221.jpeg?_gl=1*kq7zz1*_ga*NDE4MDcyMjAzLjE3NjY4MjkyOTQ.*_ga_8JE65Q40S6*czE3NzY5ODg4NzAkbzEyJGcxJHQxNzc2OTkwNTMxJGoyNiRsMCRoMA.." 
+            alt="Organic Moment 1" 
+            className="w-full h-full object-cover scale-105"
+          />
+        </div>
+        
+        {/* Photo 2 (Spans 2 columns, centered vertically) */}
+        <div className="md:col-span-2 overflow-hidden rounded-2xl shadow-[15px_15px_40px_rgba(0,0,0,0.2)] transform md:translate-y-12 aspect-[3/4]">
+          <img 
+            src="https://images.pexels.com/photos/31307957/pexels-photo-31307957.jpeg?_gl=1*kq7zz1*_ga*NDE4MDcyMjAzLjE3NjY4MjkyOTQ.*_ga_8JE65Q40S6*czE3NzY5ODg4NzAkbzEyJGcxJHQxNzc2OTkwNTMxJGoyNiRsMCRoMA.." 
+            alt="Organic Moment 2" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        
+        {/* Photo 3 (Spans 2 columns, higher up) */}
+        <div className="md:col-span-2 overflow-hidden rounded-2xl shadow-[20px_20px_50px_rgba(0,0,0,0.25)] transform md:rotate-2 md:-translate-y-8 aspect-[3/4]">
+          <img 
+            src="https://images.pexels.com/photos/33417236/pexels-photo-33417236.jpeg?_gl=1*kq7zz1*_ga*NDE4MDcyMjAzLjE3NjY4MjkyOTQ.*_ga_8JE65Q40S6*czE3NzY5ODg4NzAkbzEyJGcxJHQxNzc2OTkwNTMxJGoyNiRsMCRoMA.." 
+            alt="Organic Moment 3" 
+            className="w-full h-full object-cover scale-110"
+          />
+        </div>
       </div>
+      
       
       {/* Decorative Signature Spacer */}
       <div className="mt-20 w-16 h-[1px] bg-blush opacity-50 self-center" />
@@ -320,7 +349,7 @@ We don’t just plan events—we create experiences that reflect who you are. Ev
           Every couple has a story — <br className="hidden md:block"/> the little moments, the big dreams, and the vision of how you imagine the most important day of your life.
         </p>
         
-        <p className="font-zaslia italic text-3xl md:text-4xl text-[#3d3431] drop-shadow-sm">
+        <p className="font-raleway italic text-3xl md:text-4xl text-[#3d3431] drop-shadow-sm">
           Tell us yours… in your own words, your own way.
         </p>
 
@@ -332,16 +361,18 @@ We don’t just plan events—we create experiences that reflect who you are. Ev
           You get to enjoy the journey… the excitement, the emotions, the celebrations — while we work behind the scenes to make everything look effortless and beautifully put together.
         </p>
         
-        <p className="text-lg md:text-xl font-medium pt-4 text-blush">
+        <p className="text-lg md:text-xl font-medium pt-4 text-black">
           If you’re ready to begin this stress-free, luxury wedding experience…
         </p>
       </div>
 
-      {/* Book a Consultation Button */}
-      <button className="group relative inline-flex items-center justify-center px-10 py-4 overflow-hidden rounded-full bg-[#413b3e] text-white font-zaslia tracking-widest text-sm uppercase shadow-xl transition-all duration-300 hover:bg-[#c9749a] active:scale-95">
-        Book a Consultation
-        <span className="ml-3 transition-transform duration-300 group-hover:translate-x-1">→</span>
-      </button>
+     {/* Book a Consultation Button */}
+<Link href="/contact">
+  <button className="group relative inline-flex items-center justify-center px-10 py-4 overflow-hidden rounded-full bg-[#1b1a1b] text-white font-zaslia tracking-widest text-sm uppercase shadow-xl transition-all duration-300 hover:bg-[#55263b] active:scale-95">
+    Book a Consultation
+    <span className="ml-3 transition-transform duration-300 group-hover:translate-x-1">→</span>
+  </button>
+</Link>
 
     </div>
   </div>
@@ -361,12 +392,12 @@ We don’t just plan events—we create experiences that reflect who you are. Ev
 
   {/* 2. Main Container (70% on desktop, wider on mobile to allow overlap space) */}
   <div 
-    className="relative z-20 w-full md:w-[80%] lg:w-[70%] rounded-3xl overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.4)]"
+    className="relative z-20 w-full md:w-[80%] lg:w-[95%] rounded-3xl overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.4)]"
   >
     {/* Inner background wash */}
     <div 
       className="absolute inset-0 z-0 bg-cover bg-center"
-      style={{ backgroundImage: `url('https://images.pexels.com/photos/758744/pexels-photo-758744.jpeg?auto=compress&cs=tinysrgb&w=1260')` }}
+      style={{ backgroundImage: `url('https://images.pexels.com/photos/36943221/pexels-photo-36943221.jpeg?_gl=1*kq7zz1*_ga*NDE4MDcyMjAzLjE3NjY4MjkyOTQ.*_ga_8JE65Q40S6*czE3NzY5ODg4NzAkbzEyJGcxJHQxNzc2OTkwNTMxJGoyNiRsMCRoMA..')` }}
     />
     <div className="absolute inset-0 z-10 bg-white/95 backdrop-blur-[5px]" />
 
@@ -388,7 +419,7 @@ We don’t just plan events—we create experiences that reflect who you are. Ev
         
         {/* Photo 2: Tilted right, overlaps slightly left on mobile */}
         <div className="overflow-hidden rounded-xl shadow-xl transform rotate-[3deg] translate-y-4 -translate-x-2 md:rotate-[1deg] md:-translate-y-4 md:translate-x-0 aspect-[3/4] z-10">
-          <img src="https://images.pexels.com/photos/30521152/pexels-photo-30521152.jpeg?auto=compress&cs=tinysrgb&w=600" alt="J2" className="w-full h-full object-cover" />
+          <img src="https://images.pexels.com/photos/36943221/pexels-photo-36943221.jpeg?_gl=1*kq7zz1*_ga*NDE4MDcyMjAzLjE3NjY4MjkyOTQ.*_ga_8JE65Q40S6*czE3NzY5ODg4NzAkbzEyJGcxJHQxNzc2OTkwNTMxJGoyNiRsMCRoMA.." alt="J2" className="w-full h-full object-cover" />
         </div>
         
         {/* Photo 3: Higher up on mobile, overlapping down */}
@@ -398,7 +429,7 @@ We don’t just plan events—we create experiences that reflect who you are. Ev
         
         {/* Photo 4: Tilted far left, tucked under on mobile */}
         <div className="overflow-hidden rounded-xl shadow-2xl transform rotate-[-6deg] translate-y-2 -translate-x-4 md:rotate-[-1deg] md:translate-y-2 md:translate-x-0 aspect-[3/4] z-0">
-          <img src="https://images.pexels.com/photos/9778787/pexels-photo-9778787.jpeg?auto=compress&cs=tinysrgb&w=600" alt="J4" className="w-full h-full object-cover" />
+          <img src="https://images.pexels.com/photos/31307957/pexels-photo-31307957.jpeg?_gl=1*kq7zz1*_ga*NDE4MDcyMjAzLjE3NjY4MjkyOTQ.*_ga_8JE65Q40S6*czE3NzY5ODg4NzAkbzEyJGcxJHQxNzc2OTkwNTMxJGoyNiRsMCRoMA.." alt="J4" className="w-full h-full object-cover" />
         </div>
 
         {/* Photo 5: Heavy right tilt, big mobile overlap */}
@@ -413,7 +444,7 @@ We don’t just plan events—we create experiences that reflect who you are. Ev
         
         {/* Photo 7: Subtle tilt, centered depth */}
         <div className="overflow-hidden rounded-xl shadow-2xl transform rotate-[2deg] translate-y-4 md:rotate-[-2deg] md:translate-y-12 aspect-[3/4] z-10">
-          <img src="https://images.pexels.com/photos/17000467/pexels-photo-17000467.jpeg?auto=compress&cs=tinysrgb&w=600" alt="J7" className="w-full h-full object-cover" />
+          <img src="https://images.pexels.com/photos/33417236/pexels-photo-33417236.jpeg?_gl=1*kq7zz1*_ga*NDE4MDcyMjAzLjE3NjY4MjkyOTQ.*_ga_8JE65Q40S6*czE3NzY5ODg4NzAkbzEyJGcxJHQxNzc2OTkwNTMxJGoyNiRsMCRoMA.." alt="J7" className="w-full h-full object-cover" />
         </div>
         
         {/* Photo 8: Tilted right, raised to float */}
@@ -439,13 +470,13 @@ We don’t just plan events—we create experiences that reflect who you are. Ev
         <div className="relative z-20 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-start">
             <div className="md:col-span-3 space-y-6">
-              <h4 className="font-zaslia text-xs uppercase tracking-[0.3em] text-[#df81a8]">Navigate</h4>
+              <h4 className="font-zaslia text-xs uppercase tracking-[0.3em] text-[#df81a8]"></h4>
               <ul className="space-y-4 font-raleway text-sm opacity-80">
-                <li className="hover:text-[#df81a8] transition-colors cursor-pointer">Home</li>
-                <li className="hover:text-[#df81a8] transition-colors cursor-pointer">Our Story</li>
-                <li className="hover:text-[#df81a8] transition-colors cursor-pointer">The Magic</li>
-                <li className="hover:text-[#df81a8] transition-colors cursor-pointer">Words of Love</li>
-                <li className="hover:text-[#df81a8] transition-colors cursor-pointer">Contact</li>
+                <li className="hover:text-[#df81a8] transition-colors cursor-pointer"></li>
+                <li className="hover:text-[#df81a8] transition-colors cursor-pointer"></li>
+                <li className="hover:text-[#df81a8] transition-colors cursor-pointer"></li>
+                <li className="hover:text-[#df81a8] transition-colors cursor-pointer"></li>
+                <li className="hover:text-[#df81a8] transition-colors cursor-pointer"></li>
               </ul>
             </div>
             <div className="md:col-span-6 flex flex-col items-center text-center space-y-8 border-y md:border-y-0 md:border-x border-[#FAF9F6]/10 py-12 md:py-0 px-4">
@@ -455,7 +486,7 @@ We don’t just plan events—we create experiences that reflect who you are. Ev
               </div>
               <div className="space-y-2 font-raleway text-sm opacity-90 max-w-xs">
                 <p>Based in Delhi NCR</p>
-                <p>Curating Bespoke Luxury Weddings Worldwide</p>
+                <p>+91 95998 43861</p>
               </div>
               <div className="flex gap-8 items-center pt-4">
                 <a href="#" className="hover:text-[#df81a8] transition-all transform hover:scale-110">Instagram</a>
@@ -463,12 +494,12 @@ We don’t just plan events—we create experiences that reflect who you are. Ev
               </div>
             </div>
             <div className="md:col-span-3 flex flex-col items-center md:items-end text-center md:text-right space-y-6">
-              <h4 className="font-zaslia text-xs uppercase tracking-[0.3em] text-[#df81a8]">Get in Touch</h4>
+              <h4 className="font-zaslia text-xs uppercase tracking-[0.3em] text-[#df81a8]"></h4>
               <div className="space-y-4 font-raleway text-sm opacity-80">
-                <p className="hover:text-[#df81a8] cursor-pointer">hello@theblushbureau.com</p>
+                <p className="hover:text-[#df81a8] cursor-pointer"></p>
                 <div className="pt-4 space-y-1">
-                  <p className="text-[#df81a8] font-zaslia italic">Hours</p>
-                  <p>Mon — Fri: 10am - 7pm</p>
+                  <p className="text-[#df81a8] font-zaslia italic"></p>
+                  <p></p>
                 </div>
               </div>
             </div>

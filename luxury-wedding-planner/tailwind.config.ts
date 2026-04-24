@@ -18,6 +18,7 @@ const config: Config = {
         zaslia: ['var(--font-zaslia)', 'serif'],
         raleway: ['var(--font-raleway)', 'sans-serif'],
         alexbrush: ['var(--font-alexbrush)', 'cursive'],
+        geist: ['var(--font-geist)', 'sans-serif'],
         // General UI Fonts
         sans: ['var(--font-montserrat)', 'sans-serif'],
       },

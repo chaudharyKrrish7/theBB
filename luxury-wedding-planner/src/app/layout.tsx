@@ -37,6 +37,11 @@ const zaslia = localFont({
   variable: "--font-zaslia",
 });
 
+const geist = localFont({
+  src: "./fonts/Geist.ttf",
+  variable: "--font-geist",
+});
+
 export const metadata: Metadata = {
   title: "The Blush Bureau | Luxury Weddings",
   description: "Bespoke wedding planning and event design.",
@@ -56,6 +61,7 @@ export default function RootLayout({
         ${zaslia.variable} 
         ${alexBrush.variable}
         ${raleway.variable}
+        ${geist.variable}
         bg-[#FAF9F6] text-zinc-800 antialiased
       `}>
         <main>{children}</main>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import ContactPopup from '@/components/ContactPopup';
 
 // Base font for body/readability
 const montserrat = Montserrat({ 
@@ -65,6 +66,9 @@ export default function RootLayout({
         bg-[#FAF9F6] text-zinc-800 antialiased
       `}>
         <main>{children}</main>
+
+        <ContactPopup />
+
       </body>
     </html>
   );

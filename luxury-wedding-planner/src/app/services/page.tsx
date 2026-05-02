@@ -95,27 +95,46 @@ export default function Services() {
       </section>
 
       {/* 4. THE SIX PILLARS */}
-      <section className="py-32 px-6 md:px-16 bg-[#F5E6E0]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
-          {[
-            { title: "Wedding Planning", desc: "It all begins with an idea — a feeling of how you want your day to be. We take that vision and quietly shape it into a celebration that feels effortless, refined, and truly yours." },
-            { title: "Budget Management", desc: "Behind every beautiful wedding is a thoughtful plan. We help you spend where it matters, creating a balance between elegance and intention — without the overwhelm." },
-            { title: "Venue Search", desc: "The right space changes everything. We help you find a venue that doesn’t just fit your wedding — but feels like it was always meant to be yours." },
-            { title: "Setup & Coordination", desc: "While everything comes together in the background, you stay in the moment. We ensure every detail flows seamlessly, so your day unfolds exactly as it should." },
-            { title: "Styling & Design", desc: "It’s not about doing more — it’s about doing it right. We design spaces that feel natural, elegant, and deeply personal to your story." },
-            { title: "Guest Hospitality", desc: "A wedding is as much about your guests as it is about you. We take care of every touchpoint, so everyone feels welcomed, comfortable, and part of something special." }
-          ].map((service, idx) => (
-            <div key={idx} className="space-y-6">
-              <div className="flex items-center gap-4">
-                <span className="text-[#df81a8] font-zaslia text-xs tracking-widest opacity-40">0{idx + 1}</span>
-                <div className="h-[1px] w-8 bg-[#df81a8]/20" />
-              </div>
-              <h3 className="font-zaslia italic text-3xl text-[#3d3431]">{service.title}</h3>
-              <p className="font-raleway text-base leading-relaxed text-[#2D2926] font-light opacity-80">{service.desc}</p>
-            </div>
-          ))}
+<section className="py-32 px-6 md:px-16 bg-[#F5E6E0]">
+  <div className="max-w-7xl mx-auto">
+    
+    {/* Section Heading */}
+    <div className="flex flex-col items-center mb-24 text-center">
+      <span className="font-zaslia text-[10px] uppercase tracking-[0.5em] text-[#3d3431] opacity-100 mb-4">
+        Our Offerings
+      </span>
+      <h2 className="text-[#df81a8] text-6xl md:text-[8rem] font-zaslia leading-none drop-shadow-sm">
+        Make it stand out!
+      </h2>
+      <div className="w-16 h-[1px] bg-[#df81a8] opacity-30 mt-10"></div>
+    </div>
+
+    {/* Pillars Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
+      {[
+        { title: "Wedding Planning", desc: "It all begins with an idea — a feeling of how you want your day to be. We take that vision and quietly shape it into a celebration that feels effortless, refined, and truly yours." },
+        { title: "Budget Management", desc: "Behind every beautiful wedding is a thoughtful plan. We help you spend where it matters, creating a balance between elegance and intention — without the overwhelm." },
+        { title: "Venue Search", desc: "The right space changes everything. We help you find a venue that doesn’t just fit your wedding — but feels like it was always meant to be yours." },
+        { title: "Setup & Coordination", desc: "While everything comes together in the background, you stay in the moment. We ensure every detail flows seamlessly, so your day unfolds exactly as it should." },
+        { title: "Styling & Design", desc: "It’s not about doing more — it’s about doing it right. We design spaces that feel natural, elegant, and deeply personal to your story." },
+        { title: "Guest Hospitality", desc: "A wedding is as much about your guests as it is about you. We take care of every touchpoint, so everyone feels welcomed, comfortable, and part of something special." }
+      ].map((service, idx) => (
+        <div key={idx} className="space-y-6 group">
+          <div className="flex items-center gap-4">
+            <span className="text-[#df81a8] font-zaslia text-xs tracking-widest opacity-40">0{idx + 1}</span>
+            <div className="h-[1px] w-8 bg-[#df81a8]/20 group-hover:w-12 transition-all" />
+          </div>
+          <h3 className="font-zaslia italic text-3xl text-[#3d3431] group-hover:text-[#df81a8] transition-colors duration-300">
+            {service.title}
+          </h3>
+          <p className="font-raleway text-base leading-relaxed text-[#2D2926] font-light opacity-80">
+            {service.desc}
+          </p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* 5. FINAL CTA SECTION */}
       <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
